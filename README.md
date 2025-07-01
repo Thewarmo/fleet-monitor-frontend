@@ -1,70 +1,70 @@
 # Fleet Monitor Frontend
 
-This is the web frontend for the Fleet Monitoring system, providing an interactive dashboard for monitoring vehicle fleets.
+Este es el frontend web del sistema de Monitoreo de Flotas, que proporciona un panel interactivo para monitorear flotas de vehículos.
 
-## Technologies Used
+## Tecnologías Utilizadas
 
 *   **Framework:** Next.js (React)
-*   **Styling:** Tailwind CSS
-*   **Mapping:** Google Maps API (`@react-google-maps/api`)
-*   **Real-time Communication:** SignalR (`@microsoft/signalr`)
-*   **State Management:** React Context API
+*   **Estilos:** Tailwind CSS
+*   **Mapas:** Google Maps API (`@react-google-maps/api`)
+*   **Comunicación en Tiempo Real:** SignalR (`@microsoft/signalr`)
+*   **Gestión de Estado:** React Context API
 
-## Setup Instructions
+## Instrucciones de Configuración
 
-1.  **Prerequisites:**
-    *   Node.js (LTS version recommended)
-    *   npm or Yarn
+1.  **Requisitos Previos:**
+    *   Node.js (se recomienda la versión LTS)
+    *   npm o Yarn
 
-2.  **Clone the repository:**
+2.  **Clonar el repositorio:**
     ```bash
-    git clone <your-repository-url>
+    git clone <tu-url-del-repositorio>
     cd fleet-monitor-frontend
     ```
 
-3.  **Install Dependencies:**
+3.  **Instalar Dependencias:**
     ```bash
     npm install
-    # or yarn install
+    # o yarn install
     ```
 
-4.  **Environment Variables:**
-    *   Create a `.env.local` file in the root of the project.
-    *   Add your Google Maps API key:
+4.  **Variables de Entorno:**
+    *   Crea un archivo `.env.local` en la raíz del proyecto.
+    *   Agrega tu clave de API de Google Maps:
         ```
-        NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
-        NEXT_PUBLIC_API_BASE_URL=http://localhost:5000 # Or your backend API URL
+        NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=TU_CLAVE_DE_GOOGLE_MAPS
+        NEXT_PUBLIC_API_BASE_URL=http://localhost:5000 # O la URL de tu API backend
         ```
 
-## Running the Application
+## Ejecutar la Aplicación
 
-To run the development server:
+Para ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or yarn dev
+# o yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-## Running Tests
+## Ejecutar Pruebas
 
-To run the unit tests (using Jest and React Testing Library):
+Para ejecutar las pruebas unitarias (usando Jest y React Testing Library):
 
 ```bash
 npm test
-# or yarn test
+# o yarn test
 ```
 
-## Offline Strategy
+## Estrategia Offline
 
-This application implements a basic offline strategy using a Service Worker. It caches static assets (App Shell) and dynamically caches API responses (cache-first, then network strategy) to provide a basic level of functionality when offline.
+Esta aplicación implementa una estrategia básica de funcionamiento offline utilizando un Service Worker. Se almacenan en caché los recursos estáticos (App Shell) y las respuestas de API de forma dinámica (estrategia de "cache primero, luego red") para proporcionar un nivel básico de funcionalidad sin conexión.
 
-To test offline capabilities:
-1.  Start the application.
-2.  Open your browser's developer tools.
-3.  Go to the "Application" tab -> "Service Workers".
-4.  Check "Offline" checkbox.
-5.  Reload the page.
+Para probar las capacidades offline:
+1.  Inicia la aplicación.
+2.  Abre las herramientas de desarrollo del navegador.
+3.  Ve a la pestaña "Application" -> "Service Workers".
+4.  Marca la casilla "Offline".
+5.  Recarga la página.
 
-Note: For full offline functionality, ensure all critical assets are listed in `public/service-worker.js` and consider more advanced caching strategies for dynamic data.
+Nota: Para una funcionalidad offline completa, asegúrate de que todos los recursos críticos estén listados en `public/service-worker.js` y considera estrategias de caché más avanzadas para los datos dinámicos.
