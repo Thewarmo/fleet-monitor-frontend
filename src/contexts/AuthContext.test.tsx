@@ -50,7 +50,7 @@ describe('AuthContext', () => {
 
   it('should log in a user successfully', async () => {
     (authService.login as jest.Mock).mockResolvedValue(true);
-    localStorageMock.setItem('jwt_token', 'header.eyJzdWIiOiJ0ZXN0dXNlciIsInJvbGVzIjpbInVzZXIiXX0.signature');
+    
 
     const { result } = renderHook(() => useAuth(), { wrapper: AuthProvider });
 
